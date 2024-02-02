@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\OrderLine;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreOrderLineRequest;
+use App\Http\Requests\UpdateOrderLineRequest;
 
-class PostController extends Controller
+class OrderLineController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = DB::table('posts')
-                        ->select('excerpt', 'content')
-            ->get();
-        dd($posts);
-//        ray($posts);
+        //
     }
 
     /**
@@ -31,7 +28,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreOrderLineRequest $request)
     {
         //
     }
@@ -39,7 +36,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(OrderLine $orderLine)
     {
         //
     }
@@ -47,7 +44,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(OrderLine $orderLine)
     {
         //
     }
@@ -55,7 +52,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateOrderLineRequest $request, OrderLine $orderLine)
     {
         //
     }
@@ -63,7 +60,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(OrderLine $orderLine)
     {
         //
     }

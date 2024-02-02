@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Part;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StorePartRequest;
+use App\Http\Requests\UpdatePartRequest;
 
-class PostController extends Controller
+class PartController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = DB::table('posts')
-                        ->select('excerpt', 'content')
-            ->get();
-        dd($posts);
-//        ray($posts);
+        //
     }
 
     /**
@@ -31,7 +28,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePartRequest $request)
     {
         //
     }
@@ -39,7 +36,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Part $part)
     {
         //
     }
@@ -47,7 +44,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Part $part)
     {
         //
     }
@@ -55,7 +52,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdatePartRequest $request, Part $part)
     {
         //
     }
@@ -63,7 +60,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Part $part)
     {
         //
     }
